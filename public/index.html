@@ -1,0 +1,39 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Search App</title>
+</head>
+<body>
+  <h1>Search Items</h1>
+  <form action="/search" method="GET">
+    <label for="keyword">Keyword:</label>
+    <input type="text" id="keyword" name="keyword" required>
+    <button type="submit">Search</button>
+  </form>
+  <div id="results"></div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const keyword = document.getElementById('keyword').value;
+      const response = await fetch(`/search/${encodeURIComponent(keyword)}`);
+      const data = await response.json();
+
+      const resultsContainer = document.getElementById('results');
+      resultsContainer.innerHTML = '<h2>Search Results:</h2>';
+
+      if (data.items.length === 0) {
+        resultsContainer.innerHTML += '<p>No items found.</p>';
+      } else {
+        data.items.forEach(item => {
+          resultsContainer.innerHTML += `<p>${item.id}: ${item.name}</p>`;
+        });
+      }
+    });
+  </script>
+</body>
+</html>
