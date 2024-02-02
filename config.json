@@ -1,0 +1,16 @@
+{
+  "name": "Item Tracker",
+  "version": "1.0.0",
+  "slug": "item-tracker",
+  "description": "A Home Assistant add-on for tracking items.",
+  "arch": ["armhf", "armv7", "amd64", "aarch64", "i386"],
+  "image": "ghcr.io/kristena11/item-tracker-addon:latest",
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "privileged": true,
+  "map": ["config:/config", "share:/share"],
+  "devices": [],
+  "full_access": true,
+  "protected": false
+}
