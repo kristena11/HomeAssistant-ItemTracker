@@ -1,4 +1,4 @@
-FROM node:14
+FROM homeassistant/amd64-base:3.0.0
 
 WORKDIR /usr/src/app
 
@@ -10,6 +10,11 @@ RUN npm rebuild sqlite3
 
 COPY . .
 
-EXPOSE 3000
+LABEL \
+    io.hass.version="1.0.0" \
+    io.hass.arch="amd64" \
+    io.hass.type="addon" \
+    io.hass.name="Your Add-on Name" \
+    io.hass.description="A brief description of your add-on"
 
-CMD ["node", "app.js"]
+CMD ["/usr/bin/run.sh"]
