@@ -1,10 +1,13 @@
 {
-  "name": "itemtracker",
+  "name": "ItemTracker",
   "version": "1.0.0",
   "slug": "itemtracker",
-  "description": "Home Assistant Item Tracker",
-  "arch": ["armhf", "armv7", "amd64"],
-  "startup": "application",
-  "url": "https://github.com/kristena11/HomeAssistant-ItemTracker",
-  "webui": "https://github.com/kristena11/HomeAssistant-ItemTracker"
+  "description": "Home Assistant Item Tracker Add-on",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "repository": "https://github.com/kristena11/HomeAssistant-ItemTracker",
+  "maintainer": "Your Name",
+  "homepage": "https://github.com/kristena11/HomeAssistant-ItemTracker",
+  "startup": "before",
+  "onboarding": true,
+  "options": {}
 }

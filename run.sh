@@ -2,4 +2,4 @@
 
 cd /usr/src/app
 
-npm start
+node app.js
