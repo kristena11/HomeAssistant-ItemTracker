@@ -1,0 +1,2 @@
+host: 0.0.0.0  # Allows external access
+port: 3000
